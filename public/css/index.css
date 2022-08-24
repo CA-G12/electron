@@ -75,7 +75,13 @@
     color: #fff;
   }
   header .button:hover{
-    border: 2px solid #224610;
+    color: #fff;
+    background-color: #59ce23;
+  }
+  
+  header .button:active {
+    color: #fff;
+    background-color: #46a51b;
   }
 
   header .button.btn_one{
@@ -120,9 +126,9 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 80%;
     flex-wrap: wrap;
     margin-top: 60px;
+    width: 100%;
   }
 
   .card {
@@ -329,9 +335,11 @@ form {
   top: 55%;
   left: 58%;
   transform: translate(-50%,-50%);
-  display: none;
 }
 
+.form {
+  display: none;
+}
 
 .container {
   width: 80%;
@@ -400,4 +408,30 @@ form {
 .x2:hover {
   color: #fff;
   background-color: #46a51b;
+}
+
+/* Delete Button */
+
+.product-details-delete {
+  padding: 8px 15px;
+  background-color: #46a51b;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+.product-details-delete:hover {
+  color: #fff;
+  background-color: #59ce23;
+}
+
+.product-details-delete:active {
+  color: #fff;
+  background-color: #46a51b;
+}
+
+footer {
+  background-color: red;
+  color: #fff;
 }
