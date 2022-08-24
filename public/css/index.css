@@ -15,9 +15,73 @@
     background-color: #fff;
   }
 
-  input, button, a {
-    font-family: inherit;
+  header {
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    top: 50px;
+    left: 0;
+    padding: 0 9%;
+    align-items: center;
+    z-index: 999;
+    height: 76px
   }
+
+  header a {
+    text-decoration: none;
+    color: #000;
+  }
+  
+  header.active {
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    transition: all 250ms;
+    z-index: 999;
+    padding: 0 6%;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  }
+  
+  header.active .logo-wrapper img {
+    width: 30px;
+    height: 30px;
+  }
+    
+  .logo-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-wrapper img {
+    width: 60px;
+    height: 60px;
+    margin-right: 1em;
+  }
+  header .buttons-wrapper{
+    display: flex;
+    align-items: center;
+  }
+  
+  header .button {
+    background-color: #78C655;
+    border-radius: 6px;
+    padding: 9px 22px;
+    transition: all 200ms;
+    cursor: pointer;
+  }
+
+  header .button a{
+    color: #fff;
+  }
+  header .button:hover{
+    border: 2px solid #224610;
+  }
+
+  header .button.btn_one{
+    margin-right: 20px;
+  }
+
 
   .container {
     display: flex;
@@ -28,9 +92,9 @@
   }
 
   .trending {
-    margin-top: 25px;
     font-weight: 300;
     font-size: 40px;
+    margin-top: 120px;
   }
 
   .top-categories {
@@ -47,7 +111,7 @@
   }
 
   .selected {
-    color: #78C655;
+    color: #78c754;
     text-shadow: 0 0 1px;
   }
 
