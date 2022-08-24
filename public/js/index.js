@@ -2,7 +2,8 @@ const cardSection = document.querySelector('.cards-section');
 const xButton = document.querySelector('.x');
 const xButton2 = document.querySelector('.x2');
 const addProductsButton = document.querySelector('#addproductsbutton');
-const form = document.querySelector("form");
+const form = document.querySelector(".form");
+const deleteButton = document.querySelector('.product-details-delete');
 
 const popup = document.querySelector('.product-popup');
 const productsDetailsImage = document.querySelector('.product-details-image');
@@ -13,6 +14,8 @@ const sellerDetailsImage = document.querySelector('.seller-details-image');
 const sellerDetailsTitle = document.querySelector('.seller-details-title');
 const sellerDetailsWebsite = document.querySelector('.seller-details-website');
 const sellerDetailsLocation = document.querySelector('.seller-details-location');
+const sellerDetailsid = document.querySelector('.seller-details-id');
+
 
 addProductsButton.addEventListener("click",()=>{
     form.style.display = "block";
@@ -31,6 +34,13 @@ const renderPopUpData = (element) => {
     sellerDetailsTitle.textContent = element.seller_name;
     sellerDetailsWebsite.textContent = element.website;
     sellerDetailsLocation.textContent = element.location;
+    sellerDetailsid.textContent = "Seller id: " + element.seller_id;
+
+    deleteButton.addEventListener("click", () => {
+        fetch(`/delete-product/product_id=${element.product_id}`)
+        .then(window.location.href = '/');
+    })    
+    
 }
 
 const renderData = (data) => {
