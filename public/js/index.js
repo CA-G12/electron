@@ -1,4 +1,25 @@
 const cardSection = document.querySelector('.cards-section');
+const xButton = document.querySelector('.x');
+const popup = document.querySelector('.product-popup');
+const productsDetailsImage = document.querySelector('.product-details-image');
+const productsDetailsTitle = document.querySelector('.product-details-title');
+const productsDetailsPrice = document.querySelector('.product-details-price');
+
+const sellerDetailsImage = document.querySelector('.seller-details-image');
+const sellerDetailsTitle = document.querySelector('.seller-details-title');
+const sellerDetailsWebsite = document.querySelector('.seller-details-website');
+const sellerDetailsLocation = document.querySelector('.seller-details-location');
+
+const renderPopUpData = (element) => {
+    productsDetailsImage.src = element.product_img;
+    productsDetailsTitle.textContent = element.product_title;
+    productsDetailsPrice.textContent = "$ " + element.price;
+
+    sellerDetailsImage.src = element.seller_img;
+    sellerDetailsTitle.textContent = element.seller_name;
+    sellerDetailsWebsite.textContent = element.website;
+    sellerDetailsLocation.textContent = element.location;
+}
 
 const renderData = (data) => {
     data.forEach((element, index) => {
@@ -37,9 +58,9 @@ const renderData = (data) => {
         star4.classList.add('fa-solid','fa-star');
         star5.classList.add('fa-solid','fa-star-half-stroke');
     
-        productImg.src = element.img;
+        productImg.src = element.product_img;
         productCategory.textContent = element.category;
-        productTitle.textContent = element.title;
+        productTitle.textContent = element.product_title;
         price.textContent = "$ " + element.price;
         
         if (index < 3) {
@@ -66,13 +87,22 @@ const renderData = (data) => {
         details.appendChild(productCategory);
         details.appendChild(productTitle);
         details.appendChild(priceStars);
+
+        card.addEventListener('click', () => {
+            popup.style.display = 'flex';
+            renderPopUpData(element);
+        })
     
         card.appendChild(image);
         card.appendChild(details);
-    
+            
         cardSection.appendChild(card);
     })
 }
+
+xButton.addEventListener('click', () => {
+    popup.style.display = 'none';
+})
 
 fetch('/users')
 .then(response => response.json(response))
