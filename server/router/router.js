@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '..', '..', 'public', 'index.html'))
 })
 
-router.get('/users', (req, res) => {
+router.get('/products-data', (req, res) => {
     selectAllProducts()
     .then(data => res.json(data.rows))
     .catch(err => console.log(err))

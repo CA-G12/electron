@@ -126,6 +126,6 @@ xButton.addEventListener('click', () => {
     popup.style.display = 'none';
 })
 
-fetch('/users')
+fetch('/products-data')
 .then(response => response.json(response))
 .then(response => renderData(response))
