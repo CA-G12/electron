@@ -1,5 +1,9 @@
 const cardSection = document.querySelector('.cards-section');
 const xButton = document.querySelector('.x');
+const xButton2 = document.querySelector('.x2');
+const addProductsButton = document.querySelector('#addproductsbutton');
+const form = document.querySelector("form");
+
 const popup = document.querySelector('.product-popup');
 const productsDetailsImage = document.querySelector('.product-details-image');
 const productsDetailsTitle = document.querySelector('.product-details-title');
@@ -9,6 +13,14 @@ const sellerDetailsImage = document.querySelector('.seller-details-image');
 const sellerDetailsTitle = document.querySelector('.seller-details-title');
 const sellerDetailsWebsite = document.querySelector('.seller-details-website');
 const sellerDetailsLocation = document.querySelector('.seller-details-location');
+
+addProductsButton.addEventListener("click",()=>{
+    form.style.display = "block";
+})
+
+xButton2.addEventListener("click",()=>{
+    form.style.display = "none";
+})
 
 const renderPopUpData = (element) => {
     productsDetailsImage.src = element.product_img;
