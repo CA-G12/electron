@@ -166,7 +166,7 @@
 
   .product-category {
     color: #b3b3b3;
-
+    text-transform: capitalize;
   }
 
   .product-title {
