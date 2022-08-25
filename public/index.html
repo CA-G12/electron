@@ -82,10 +82,19 @@
             <input id="name" name="title" type="text" required placeholder="Product Title">
             <label id="number-label" for="number">Product Price: </label>
             <input id="number" type="number" placeholder="enter your price" name="price" required>
-            <label id="name-label">Seller Id: </label>
-            <input name="sellerid" id="name" type="text" required placeholder="Seller Id">
             <label  id="name-label">Product Image: </label>
             <input name="img" id="name" type="text" required placeholder="URL Image">
+          </fieldset>
+          <fieldset class="selections">
+            <label for="dropdown">Seller Id: </label>
+            <select id="dropdown" name ="sellerid">
+              <option disabled>Select one</option>
+              <option value="1">1 - Apple</option>
+              <option value="2">2 - ASUS</option>
+              <option value="3">3 - EPSON</option>
+              <option value="4">4 - VIRMEE</option>
+              <option value="5">5 - MSI</option>
+            </select>
           </fieldset>
           <fieldset class="selections">
             <label for="dropdown">Product Catoegry: </label>
